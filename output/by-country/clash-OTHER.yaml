@@ -4,26 +4,29 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
-  server: uycneynsieuocxniseunciusecmsepiock.novexgroup.ir
-  port: 2096
+- name: 🌐 其他地区 (Other) 01 - xiaohe
+  server: shop.neexbyte.ir
+  port: 8443
   udp: true
   type: vless
-  uuid: 1a67126c-b9c4-4e78-b96e-eabd4002ab0c
+  uuid: 464bc502-f963-45b6-81e3-e33d18427506
   tls: true
-  servername: uycneynsieuocxniseunciusecmsepiock.novexgroup.ir
+  servername: shop.neexbyte.ir
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
+  - 🌐 其他地区 (Other) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
+  - 🌐 其他地区 (Other) 01 - xiaohe
 rules:
 - MATCH,PROXIES
